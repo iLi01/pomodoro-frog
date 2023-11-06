@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(247, 247, 247);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --small-spacing: 2rem;
+}
+
+body {
+  margin: auto;
+  text-align: center;
+}
+
+#progress {
+  margin: auto;
+  width: 30%;
+}
+
+#gif-container {
+  position: absolute;
+  left: 41%;
+  top: 35%;
+}
+
+#froggo {
+  height: 150px;
+}
+
+#timer-container > h2 {
+  display: inline-block;
+}
+
+#btns-container {
+  display: flex;
+  justify-content: center;
+}
