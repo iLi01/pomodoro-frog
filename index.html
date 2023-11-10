@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
-  <title>Froggo Pomodoro Timer</title>
-</head>
-<body>
-  <section id="introduction-section">
-    <h1>FROGGO POMODORO</h1>
-    <h2>Coding time with your froggo!</h2>
-    <p>When froggo stops coding, please take your break as well!</p>
-  </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Froggo Pomodoro Timer</title>
+  </head>
+  <body>
+    <section id="introduction-section">
+      <h1>FROGGO POMODORO</h1>
+      <h2>Coding time with your froggo!</h2>
+      <p>When froggo stops coding, please take your break as well!</p>
+    </section>
 
-  <section id="timer-section">
-    <div class="progress" id="progress"></div>
+    <section id="timer-section">
+      <div class="progress" id="progress"></div>
 
-    <div id="gif-container">
-      <img id="froggo" src="./assets/dancing-frog.gif" alt="gif-froggo">
-    </div>
+      <div id="gif-container">
+        <img id="froggo" src="./assets/dancing-frog.gif" alt="gif-froggo" />
+      </div>
 
-    <div id="timer-container">
-      <h2 class="timer" id="minutes">00</h2><h2 class="timer">:</h2><h2 class="timer" id="seconds">00</h2>
-    </div>
+      <div class="timer">
+        <time datetime="M25S00" id="myTime">
+          <span id="minutes">25</span>
+          <span id="timerDivider"> : </span>
+          <span id="seconds">00</span>
+        </time>
+      </div>
 
-    <div id="btns-container">
-      <button class="btns" id="btn-start">Start</button>
-      <button class="btns" id="btn-pause">Pause</button>
-      <button class="btns" id="btn-restart">Restart</button>
-    </div>
-  </section>
-  <script src="./script.js"></script>
-  <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
-</body>
+      <div id="btns-container">
+        <button class="btns" id="btn-start">Start</button>
+        <button class="btns" id="btn-pause">Pause</button>
+        <button class="btns" id="btn-restart">Restart</button>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+  </body>
 </html>
