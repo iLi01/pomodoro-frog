@@ -15,6 +15,23 @@ body {
   text-align: center;
 }
 
+/* #background-img {
+  position: relative;
+  margin: auto;
+  left: 50%;
+  width: 2000px;
+} */
+
+#progress0 {
+  margin: auto;
+  width: 30%;
+}
+
+#progress-grey {
+  margin: auto;
+  width: 30%;
+}
+
 #progress {
   margin: auto;
   width: 30%;
@@ -37,4 +54,10 @@ body {
 #btns-container {
   display: flex;
   justify-content: center;
+}
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 100px;
 }

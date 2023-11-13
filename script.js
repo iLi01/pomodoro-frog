@@ -1,16 +1,56 @@
-window.onload = function LoadingCircle() {
+const startBtn = document.querySelector('#btn-start');
+
+// mock full circle on the main loaded page 
+window.onload = function LoadingCircle0() {
+  let circle = new ProgressBar.Circle('#progress0', {
+    strokeWidth: 8,
+    // color: '#5CD266',
+    trailColor: '#5CD266',
+    trailWidth: 1,
+    svgStyle: null
+  });
+  
+  circle.animate(0);
+}
+
+function LoadingCircle() {
   let circle = new ProgressBar.Circle('#progress', {
-    strokeWidth: 6,
-    easing: 'easeInOut',
-    duration: 1500,
-    color: '#FFEA82',
+    strokeWidth: 8,
+    easing: 'linear',
+    duration: 25*60000,
+    color: '#5CD266',
     trailColor: '#eee',
     trailWidth: 1,
     svgStyle: null
   });
-
+  
   circle.animate(1);
 }
+
+
+// function intervalGap(){
+//   let no = 1;
+//   setInterval(function(){
+//   if(no < 4){
+//       LoadingCircle();
+//       mainWheel.remove();
+//       no++;
+//   }else{
+//       clearInterval();
+//   }}, 60000); // for every second a new wheel starts
+// }
+// intervalGap()
+
+
+// const sectionDiv = document.querySelector('#timer-section');
+const mainWheel = document.querySelector('#progress');
+const mockDiv = document.querySelector('#progress0');
+
+const removeMockDiv = startBtn.addEventListener('click', () => {
+  removeMockDiv = mockDiv.remove();
+});
+
+startBtn.addEventListener('click', (LoadingCircle), {once: true});
 
 const currentTime = {
   // mins: 25
@@ -21,8 +61,9 @@ const currentTime = {
     if (current.secs == 59) {
       currentTime.mins += 1
       currentTime.secs = 0
-    } else {
-
+    } 
+    
+    else {
       currentTime.secs += 1
     }
 
@@ -53,16 +94,12 @@ const currentTime = {
   }
 }
 
-
 const datetimeHelper = ({ mins, secs }) => {
 return `M${mins}S${secs}`
 }
 
-const startBtn = document.querySelector('#btn-start');
-
 const timer1 = startBtn.addEventListener('click', () => {
-
-
+  audio.play();
 function pomodoro() {
 currentTime.decrement(currentTime)
 document.querySelector("span#seconds").innerHTML = currentTime.secs < 10 ? `0${currentTime.secs}` : currentTime.secs;
@@ -78,4 +115,14 @@ if (currentTime.secs == 0 && currentTime.mins == 0) {
 currentTime.mins = 0;
 currentTime.secs = 0;
 clearInterval(tick);
-}});
+}}, {once: true});
+
+let audio = document.getElementById("audio");
+audio.volume = 0.5;
+
+function play() {
+  audio.play();
+}
+function pause() {
+  audio.pause();
+}

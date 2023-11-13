@@ -14,6 +14,7 @@
     </section>
 
     <section id="timer-section">
+      <div class="progress0" id="progress0"></div>
       <div class="progress" id="progress"></div>
 
       <div id="gif-container">
@@ -32,9 +33,19 @@
         <button class="btns" id="btn-start">Start</button>
         <button class="btns" id="btn-pause">Pause</button>
         <button class="btns" id="btn-restart">Restart</button>
+        <button class="btns" id="btn-mute" onclick="pause()">Mute</button>
+      </div>
+
+      
+      <audio id="audio" src="./assets/rain-sounds.mp3"></audio>  
+      <div id="background-img">
+        <img src="./assets/forest.gif" alt="rain forest gif">
       </div>
     </section>
+
+
     <script src="./script.js"></script>
     <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+    <!-- https://progressbarjs.readthedocs.io/en/latest/ small JS library with progress bars! -->
   </body>
 </html>
