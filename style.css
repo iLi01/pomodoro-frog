@@ -4,6 +4,7 @@
   box-sizing: border-box;
   background-color: rgb(247, 247, 247);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: aqua;
 }
 
 :root {
@@ -15,12 +16,16 @@ body {
   text-align: center;
 }
 
-/* #background-img {
-  position: relative;
+#background-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* position: relative;
   margin: auto;
   left: 50%;
-  width: 2000px;
-} */
+  width: 2000px; */
+}
 
 #progress0 {
   margin: auto;
@@ -38,13 +43,16 @@ body {
 }
 
 #gif-container {
-  position: absolute;
-  left: 41%;
-  top: 35%;
+  background-image: none;
+  position: relative;
+  margin: auto;
+  left:auto;
+  bottom: 45vh;
+  max-width: 10rem;
 }
 
 #froggo {
-  height: 150px;
+  height: 200px;
 }
 
 #timer-container > h2 {
