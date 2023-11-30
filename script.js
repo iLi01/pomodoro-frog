@@ -3,7 +3,7 @@ const startBtn = document.querySelector('#btn-start');
 // mock full circle on the main loaded page 
 window.onload = function LoadingCircle0() {
   let circle = new ProgressBar.Circle('#progress0', {
-    strokeWidth: 8,
+    strokeWidth: 5,
     // color: '#5CD266',
     trailColor: '#5CD266',
     trailWidth: 1,
@@ -15,7 +15,7 @@ window.onload = function LoadingCircle0() {
 
 function LoadingCircle() {
   let circle = new ProgressBar.Circle('#progress', {
-    strokeWidth: 8,
+    strokeWidth: 5,
     easing: 'linear',
     duration: 25*60000,
     color: '#5CD266',
