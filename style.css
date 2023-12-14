@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(247, 247, 247);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: aqua;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.06rem;
+  font-size: 1.7vh;
 }
 
 :root {
@@ -14,19 +14,34 @@
 body {
   margin: auto;
   text-align: center;
+  background-image: url(https://i.pinimg.com/originals/f5/2b/3c/f52b3c4dacea94da9cdec6dfd304292c.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #whole-page {
   display: grid;
-  height: 100%;
+  height: 100vh;
+  max-height: 3000px;
   grid-template: 1fr / 1fr;
   gap: 1rem;
+  /* background-color: black; */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.339);
+  width: 80vh;
+  margin: auto;
+  /* border-radius: 1.2rem; */
+}
+
+#introduction-section {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 #text-area {
   max-height: 10vh;
-  z-index: 11111 !important;
-  background-color: black;
+  z-index: 1111111 !important;
 }
 
 /* #no-text-area {
@@ -36,7 +51,7 @@ body {
 svg {
   height: 70vh;
   margin: auto;
-  max-height: 2000px;
+  max-height: 1800px;
   position: absolute;
   top:0;
     left:0;
@@ -44,6 +59,7 @@ svg {
     bottom:0;
     margin:auto;
     width: 100%;
+  z-index: 111111;
 }
 
 #gif-container {
@@ -54,14 +70,19 @@ svg {
     right:0;
     bottom:0;
     margin:auto;
-    max-height: 40vh;
-    max-width: 40vh;
+    max-height: 29vh;
+    max-width: 29vh;
+  z-index: -111;
+  /* max-height: 600px;
+  max-width: 600px; */
 }
 
 #froggo {
   margin: auto;
   width: 100%;
   height: 100%;
+  /* max-height: 600px;
+  max-width: 600px; */
 }
 
 #timer-container > h2 {
@@ -71,31 +92,168 @@ svg {
 #btns-container {
   display: flex;
   justify-content: center;
+  gap: 1.4rem;
+  border: none;
 }
 
-#container {
-  margin: 20px;
-  width: 200px;
-  height: 100px;
+.btns {
+  border: none;
+  margin: 0.7rem;
+  background: none;
+  cursor: pointer;
+  font-size: 2.2vh;
+  font-weight: 600;
+  /* border-bottom: 2px solid white; */
 }
 
-#timer-selection {
+.btns:after {
+  content: '';
+  display: block;
   position: relative;
+  width: 60%;
+  border: 0.14rem solid #e2e2e2;
+  margin: 2px auto 0 auto; 
+  border-radius: 1rem;
+}
+
+/* .btns:focus {
+  background-image: url("./assets/lilypad.png");
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  background-color: #5CD266;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5rem;
+} */
+
+.btns:focus {
+  background-color: #5cd26648;
+  border-radius: 7rem;
 }
 
 #label-container {
   position: absolute;
     bottom: 0;
     right: 0;
+    left: 0;
+    margin-bottom: 1rem;
 }
 
+#timer-selection {
+  margin-top: 4vh;
+  position: relative;
+  max-height: 83vh;
+}
+
+/* #sound-icon-container {
+  display: flex;
+  justify-content: center;
+} */
+
+#sound-icon {
+  max-width: 1.7rem;
+  justify-content: center;
+}
+
+.timer {
+  position: absolute;
+  top:0;
+    left:0;
+    right:0;
+    bottom:37vh;
+    margin:auto;
+    height: 10vh;
+    width: 12vh;
+  background-color: none;
+  line-height: 6vh;
+  /* z-index: 111111; */
+}
+
+#minutes {
+  font-size: 9vh;
+  font-weight: 700;
+}
+
+#seconds {
+  font-size: 6vh;
+  font-weight: 700;
+}
+
+#timerDivider {
+  font-size: 5vh;
+  font-weight: 700;
+}
+
+#info-icon {
+  position: relative;
+  max-height: 2.3vh;
+  fill: rgba(255, 255, 255, 0.33);
+  transition: 0s fill;
+}
+
+
+#info-icon:hover {
+  fill: rgba(47, 47, 47, 0.33);
+  transition-duration: 1.7s;
+  cursor: pointer;
+}
+
+#instruction-section {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0.4rem;
+  margin-right: 1rem;
+}
+
+#radio-1, #radio-2, #radio-3 {
+  margin: 0 0.5rem;
+}
+
+input {
+  margin-right: 0.5rem;
+}
+
+
+/* PHONE MODE */
 @media only screen and (max-width: 800px) {
   * {
-    background-color: bisque;
+    /* background-color: bisque; */
+    font-size: 1.9vh;
+  }
+
+  body {
+    margin: auto;
+    text-align: center;
+    background-image: url(https://i.pinimg.com/originals/f5/2b/3c/f52b3c4dacea94da9cdec6dfd304292c.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  #introduction-section {
+    margin-top: 0.6rem;
+    margin-bottom: 0rem;
+  }
+
+  #whole-page {
+    display: grid;
+    height: 90vh;
+    grid-template: 1fr / 1fr;
+    gap: 1rem;
+    /* background-color: black; */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.339);
+    width: 40vh;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    border-radius: 1.2rem;
   }
 
   svg {
-    /* height: 80vh; */
+    height: 80vh;
     margin: auto;
     max-height: 100%;
     /* position: absolute;
@@ -106,8 +264,21 @@ svg {
       margin:auto; */
       width: 100%;
     padding: 1rem 1rem;
+    z-index: -11111;
   }
-  
+
+  #timer-selection {
+    margin-top: 4vh;
+    position: relative;
+  }
+
+  #label-container {
+    position: absolute;
+      bottom: 13vh;
+      right: 0;
+      left: 0;
+  }
+
   #gif-container {
     background-image: none;
     position: absolute;
@@ -118,5 +289,123 @@ svg {
       margin:auto;
       max-height: 170px;
       max-width: 170px;
+  }
+
+  .timer {
+    position: absolute;
+    top:0;
+      left:0;
+      right:0;
+      bottom:16.5vh;
+      margin:auto;
+      height: 10vh;
+      width: 8vh;
+    background-color: none;
+    line-height: 2rem;
+    /* z-index: 111111; */
+  }
+  
+  #minutes {
+    font-size: 5.8vh;
+    font-weight: 700;
+  }
+  
+  #seconds {
+    font-size: 4vh;
+    font-weight: 700;
+  }
+  
+  #timerDivider {
+    font-size: 2.5vh;
+    font-weight: 700;
+  }
+  
+  #info-icon {
+    position: relative;
+    max-height: 6vh;
+    fill: rgba(255, 255, 255, 0.33);
+  }
+  
+  #instruction-section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 1rem;
+  }
+  
+  #btns-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    margin-top: 2.5rem;
+  }
+  
+  .btns {
+    border: none;
+    margin: 0.7rem;
+    background: none;
+    font-size: 1.8vh;
+    /* border: 1px solid black;
+    border-radius: 4rem;
+    padding:0.5rem; */
+  }
+
+  #sound-icon {
+    max-width: 1.3rem;
+    justify-content: center;
+  }
+}
+
+/* BIG BIG SCREENS */
+@media only screen and (min-height: 2800px) {
+  * {
+    /* background-color: aqua; */
+    font-size: 60px;
+  }
+
+  #whole-page {
+    max-width: 2500px;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  svg {
+    max-height: 1900px;
+  }
+
+  #gif-container {
+      max-height: 900px;
+      max-width: 900px;
+    z-index: 111111;
+    /* max-height: 600px;
+    max-width: 600px; */
+  }
+  
+  .timer {
+      bottom:50%;
+      height: 100px;
+      width: 300px;
+  }
+
+  
+  #minutes {
+    font-size: 230px;
+  }
+  
+  #seconds {
+    font-size: 180px;
+  }
+  
+  #timerDivider {
+    font-size: 100px;
+  }
+
+  #info-icon {
+    max-height: 110px;
+  }
+  
+  #instruction-section {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
   }
 }

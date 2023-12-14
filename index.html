@@ -4,64 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Coding Frog Pomodoro Timer</title>
   </head>
   <body>
-  <section id="whole-page">
-    <section id="text-area">
-      <section id="introduction-section">
-        <!-- <h1>POMODORO CODING FROGGO</h1> -->
-        <h2>Coding time with froggo!</h2>
-        <p>When froggo stops coding, please take your break as well!</p>
+    <section id="whole-page">
+      <section id="text-area">
+        <section id="introduction-section">
+          <!-- <h1>POMODORO CODING FROGGO</h1> -->
+          <h1>Coding time with froggo!</h1>
+          <p>When froggo stops coding, please take your break as well!</p>
+        </section>
+
+          <div class="timer">
+            <time datetime="M25S00" id="myTime">
+              <span id="minutes">01</span>
+              <span id="timerDivider"> : </span>
+              <span id="seconds">00</span>
+            </time>
+          </div>
+
+          <div id="btns-container">
+            <button class="btns" id="btn-start">Start</button>
+            <!-- <button class="btns" id="btn-pause">Pause</button> -->
+            <button class="btns" id="btn-mute" onclick="pause()">
+              <div id="sound-icon-container">
+                <img onclick="changeIcon()" src="./assets/sound-on.png" id="sound-icon">
+              </div>
+            </button>
+            
+  <!-- <p id="one">One</p>
+  <a href="#" onclick="document.getElementById('one').id = 'two'; return false">Link2</a> -->
+          </div>
+    </section>
+
+    <section id="no-text-area">
+
+        <section id="timer-section">
+        <div class="progress0" id="progress0"></div>
+        <div class="progress" id="progress"></div>
+        <div class="progressBreak" id="progressBreak"></div>
+
+        <div id="gif-container">
+          <img id="froggo" src="./assets/coding-frog.gif" alt="gif-froggo" />
+        </div>
+        <audio id="audio1" src="./assets/rain-sounds.mp3"></audio>  
+        <audio id="audio2" src="./assets/frog-sounds.mp3"></audio>  
+
+        <!-- <div id="background-img">
+          <img src="./assets/forest.gif" alt="rain forest gif">
+        </div> -->
       </section>
 
-        <div class="timer">
-          <time datetime="M25S00" id="myTime">
-            <span id="minutes">25</span>
-            <span id="timerDivider"> : </span>
-            <span id="seconds">00</span>
-          </time>
-        </div>
+      <section id="timer-selection">
+        <div id="label-container">
+        <h3>Timers:</h3>
+            <label class="container" id="radio-1">
+              <input type="radio" checked="checked" name="radio">1/0.1
+              <span class="checkmark"></span>
+            </label>
 
-        <div id="btns-container">
-          <button class="btns" id="btn-start">Start</button>
-          <button class="btns" id="btn-pause">Pause</button>
-          <button class="btns" id="btn-restart">Restart</button>
-          <button class="btns" id="btn-mute" onclick="pause()">Mute</button>
+            <label class="container" id="radio-2">
+              <input type="radio" name="radio">25/5
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container" id="radio-3">
+              <input type="radio" name="radio">50/10
+              <span class="checkmark"></span>
+            </label>
+            
+            
         </div>
+      </section>
+  <section id="instruction-section">
+        <svg id="info-icon" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+      </section>
   </section>
-
-  <section id="no-text-area">
-      <section id="timer-section">
-      <div class="progress0" id="progress0"></div>
-      <div class="progress" id="progress"></div>
-
-      <div id="gif-container">
-        <img id="froggo" src="./assets/coding-frog.gif" alt="gif-froggo" />
-      </div>
-      <audio id="audio" src="./assets/rain-sounds.mp3"></audio>  
-
-      <!-- <div id="background-img">
-        <img src="./assets/forest.gif" alt="rain forest gif">
-      </div> -->
-    </section>
-
-    <section id="timer-selection">
-      <div id="label-container">
-      <h1>Custom Radio Buttons</h1>
-          <label class="container">One
-            <input type="radio" checked="checked" name="radio">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Two
-            <input type="radio" name="radio">
-            <span class="checkmark"></span>
-          </label>
-      </div>
-    </section>
-
-
-</section>
     <script src="./script.js"></script>
     <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
     <!-- https://progressbarjs.readthedocs.io/en/latest/ small JS library with progress bars! -->
