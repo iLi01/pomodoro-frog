@@ -103,10 +103,20 @@ svg {
   cursor: pointer;
   font-size: 2.2vh;
   font-weight: 600;
+  padding: 0.6rem;
   /* border-bottom: 2px solid white; */
 }
 
-.btns:after {
+#btn-start {
+  padding-top: 0.1rem;
+}
+
+#btn-pause {
+  padding-top: 0.1rem;
+}
+
+
+/* .btns:after {
   content: '';
   display: block;
   position: relative;
@@ -114,21 +124,11 @@ svg {
   border: 0.14rem solid #e2e2e2;
   margin: 2px auto 0 auto; 
   border-radius: 1rem;
-}
-
-/* .btns:focus {
-  background-image: url("./assets/lilypad.png");
-  background-size: cover;
-  width: 100%;
-  overflow: hidden;
-  background-color: #5CD266;
-  color: white;
-  padding: 0.2rem 0.5rem;
-  border-radius: 5rem;
 } */
 
 .btns:focus {
-  background-color: #5cd26648;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(92,210,102,1) 100%);
   border-radius: 7rem;
 }
 
@@ -187,7 +187,7 @@ svg {
 
 #info-icon {
   position: relative;
-  max-height: 2.3vh;
+  max-height: 2.6vh;
   fill: rgba(255, 255, 255, 0.33);
   transition: 0s fill;
 }
@@ -299,7 +299,7 @@ input {
       bottom:16.5vh;
       margin:auto;
       height: 10vh;
-      width: 8vh;
+      width: 6.8vh;
     background-color: none;
     line-height: 2rem;
     /* z-index: 111111; */
@@ -322,7 +322,7 @@ input {
   
   #info-icon {
     position: relative;
-    max-height: 6vh;
+    max-height: 6.5vh;
     fill: rgba(255, 255, 255, 0.33);
   }
   
@@ -346,13 +346,14 @@ input {
     margin: 0.7rem;
     background: none;
     font-size: 1.8vh;
+    padding: 0.4rem 0.6rem;
     /* border: 1px solid black;
     border-radius: 4rem;
     padding:0.5rem; */
   }
 
   #sound-icon {
-    max-width: 1.3rem;
+    max-width: 1.2rem;
     justify-content: center;
   }
 }

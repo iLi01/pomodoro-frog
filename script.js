@@ -1,4 +1,5 @@
 const startBtn = document.querySelector('#btn-start');
+const breakBtn = document.querySelector('#btn-pause');
 
 // mock full circle on the main loaded page 
 window.onload = function LoadingCircle0() {
@@ -143,18 +144,85 @@ const currentTime = {
       audio.pause();
 
       //ribbit sounds to tell when break time starts
+      ribbit.play();
       setTimeout(function(){
-        ribbit.play();
-          setTimeout(function(){
-              ribbit.pause();
-          }, 4000);
-      }, 500);
+      ribbit.pause();
+    }, 4000);
 
       const frogGif = document.getElementById("froggo");
         if (frogGif.src.endsWith("coding-frog.gif")) {
             frogGif.src = "./assets/dancing-frog.gif";
         } else {
       frogGif.src = "./assets/dancing-frog.gif";
+
+      // ribbit.pause();
+
+      // const currentTimeB = {
+      //   // mins: 25
+      //   minsB: 0, 
+      //   secsB: 12,
+      
+      //   decrementB: function (current = this) {
+      
+      //     if (current.secsB == 0 && current.minsB > 0) {
+      //       currentTimeB.minsB -= 1;
+      //       currentTimeB.secsB = 59;
+      
+      //     } else if (current.secsB == 0 && current.minsB == 0) {
+      //       current.secsB = 0;
+      //       current.minsB = 0;
+      //       audio.pause();
+      
+      //       //ribbit sounds to tell when break time starts
+      //       ribbit.play();
+      //       setTimeout(function(){
+      //       ribbit.pause();
+      //     }, 4000);
+      
+      //       const frogGif = document.getElementById("froggo");
+      //         if (frogGif.src.endsWith("coding-frog.gif")) {
+      //             frogGif.src = "./assets/dancing-frog.gif";
+      //         } else {
+      //       frogGif.src = "./assets/dancing-frog.gif";
+            
+      //   }
+      //     }
+      
+      //     else {
+      //       currentTimeB.secsB -= 1
+      //     }
+      
+      
+      //     return {
+      //       ...currentTimeB
+      //     }
+      //   }
+      // }
+
+      // breakBtn.addEventListener('click', () => {
+      //   audio.play();
+      //   if (soundIcon.src.endsWith("sound-off.png")) {
+      //     audio.pause();
+      //   }
+
+      //   LoadingCircle(), {once: true};
+      
+      // function pomodoroB() {
+      // currentTimeB.decrementB(currentTimeB)
+      // document.querySelector("span#seconds").innerHTML = currentTimeB.secsB < 10 ? `0${currentTimeB.secsB}` : currentTimeB.secsB;
+      // document.querySelector("span#minutes").innerHTML = currentTimeB.minsB < 10 ? `0${currentTimeB.minsB}` : currentTimeB.minsB;
+      // }
+      
+      // let tickB = setInterval(() => {
+      // pomodoroB()
+      // console.log(currentTimeB)
+      // }, 1000);
+      
+      // if (currentTimeB.secsB == 0 && currentTimeB.minsB == 0) {
+      // currentTimeB.minsB = 0;
+      // currentTimeB.secsB = 0;
+      // clearInterval(tickB);
+      // }}, {once: true}), {once: true};
   }
     }
 
@@ -168,6 +236,7 @@ const currentTime = {
     }
   }
 }
+
 
 const datetimeHelper = ({ mins, secs }) => {
 return `M${mins}S${secs}`
@@ -205,6 +274,54 @@ clearInterval(tick);
 ///RADIO 1 CLICKED (default anyway but you can go back if RE-clicked)
 const radio1 = document.getElementById("radio-1");
 
+//sepparate time array so it doesn't bubble up when pressing on the radio-1 and then on the start btn
+const currentTimee = {
+  // mins: 25
+  minse: 1, 
+  secse: 0,
+
+  decremente: function (current = this) {
+
+    if (current.secse == 0 && current.minse > 0) {
+      currentTimee.minse -= 1;
+      currentTimee.secse = 59;
+
+    } else if (current.secse == 0 && current.minse == 0) {
+      current.secse = 0;
+      current.minse = 0;
+      audio.pause();
+
+      //ribbit sounds to tell when break time starts
+      setTimeout(function(){
+        ribbit.play();
+          setTimeout(function(){
+              ribbit.pause();
+          }, 4000);
+      }, 500);
+
+      const frogGif = document.getElementById("froggo");
+        if (frogGif.src.endsWith("coding-frog.gif")) {
+            frogGif.src = "./assets/dancing-frog.gif";
+        } else {
+      frogGif.src = "./assets/dancing-frog.gif";
+  }
+    }
+
+    else {
+      currentTimee.secse -= 1
+    }
+
+
+    return {
+      ...currentTimee
+    }
+  }
+}
+
+const datetimeHelpere = ({ minse, secse }) => {
+return `M${minse}S${secse}`
+}
+
 radio1.addEventListener('click', () => {
   document.querySelector("span#seconds").innerHTML = "00";
   document.querySelector("span#minutes").innerHTML = "01";
@@ -217,21 +334,21 @@ radio1.addEventListener('click', () => {
 
   LoadingCircle(), {once: true};
 
-function pomodoro() {
-currentTime.decrement(currentTime)
-document.querySelector("span#seconds").innerHTML = currentTime.secs < 10 ? `0${currentTime.secs}` : currentTime.secs;
-document.querySelector("span#minutes").innerHTML = currentTime.mins < 10 ? `0${currentTime.mins}` : currentTime.mins;
+function pomodoroe() {
+currentTimee.decremente(currentTimee)
+document.querySelector("span#seconds").innerHTML = currentTimee.secse < 10 ? `0${currentTimee.secse}` : currentTimee.secse;
+document.querySelector("span#minutes").innerHTML = currentTimee.minse < 10 ? `0${currentTimee.minse}` : currentTimee.minse;
 }
 
-let tick = setInterval(() => {
-pomodoro()
-console.log(currentTime)
+let ticke = setInterval(() => {
+pomodoroe()
+console.log(currentTimee)
 }, 1000);
 
-if (currentTime.secs == 0 && currentTime.mins == 0) {
-currentTime.mins = 0;
-currentTime.secs = 0;
-clearInterval(tick);
+if (currentTimee.secse == 0 && currentTimee.minse == 0) {
+currentTimee.minse = 0;
+currentTimee.secse = 0;
+clearInterval(ticke);
 }}, {once: true});}, {once: true});
 //{once: true} doesn't allow event bubbling aka over pressing the buttons & messing up the timer
 //(eg. if you press 3 times, it would -3seconds instead of just -1second)
