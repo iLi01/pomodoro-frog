@@ -59,6 +59,21 @@ function LoadingCircle3() {
   circle.animate(1);
 }
 
+//50min
+function LoadingCircleB() {
+  let circle = new ProgressBar.Circle('#progress', {
+    strokeWidth: 6,
+    easing: 'linear',
+    duration: 12000,
+    color: '#5CD266',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: null
+  });
+  
+  circle.animate(1);
+}
+
 const mainWheel = document.querySelector('#progress');
 const mockDiv = document.querySelector('#progress0');
 
@@ -155,74 +170,74 @@ const currentTime = {
         } else {
       frogGif.src = "./assets/dancing-frog.gif";
 
-      // ribbit.pause();
+            ribbit.pause();
 
-      // const currentTimeB = {
-      //   // mins: 25
-      //   minsB: 0, 
-      //   secsB: 12,
-      
-      //   decrementB: function (current = this) {
-      
-      //     if (current.secsB == 0 && current.minsB > 0) {
-      //       currentTimeB.minsB -= 1;
-      //       currentTimeB.secsB = 59;
-      
-      //     } else if (current.secsB == 0 && current.minsB == 0) {
-      //       current.secsB = 0;
-      //       current.minsB = 0;
-      //       audio.pause();
-      
-      //       //ribbit sounds to tell when break time starts
-      //       ribbit.play();
-      //       setTimeout(function(){
-      //       ribbit.pause();
-      //     }, 4000);
-      
-      //       const frogGif = document.getElementById("froggo");
-      //         if (frogGif.src.endsWith("coding-frog.gif")) {
-      //             frogGif.src = "./assets/dancing-frog.gif";
-      //         } else {
-      //       frogGif.src = "./assets/dancing-frog.gif";
+            const currentTimeB = {
+              // mins: 25
+              minsB: 0, 
+              secsB: 12,
             
-      //   }
-      //     }
-      
-      //     else {
-      //       currentTimeB.secsB -= 1
-      //     }
-      
-      
-      //     return {
-      //       ...currentTimeB
-      //     }
-      //   }
-      // }
+              decrementB: function (current = this) {
+            
+                if (current.secsB == 0 && current.minsB > 0) {
+                  currentTimeB.minsB -= 1;
+                  currentTimeB.secsB = 59;
+            
+                } else if (current.secsB == 0 && current.minsB == 0) {
+                  current.secsB = 0;
+                  current.minsB = 0;
+                  audio.pause();
+            
+                  //ribbit sounds to tell when break time starts
+                  ribbit.play();
+                  setTimeout(function(){
+                  ribbit.pause();
+                }, 4000);
+            
+                  const frogGif = document.getElementById("froggo");
+                    if (frogGif.src.endsWith("coding-frog.gif")) {
+                        frogGif.src = "./assets/dancing-frog.gif";
+                    } else {
+                  frogGif.src = "./assets/dancing-frog.gif";
+                  
+              }
+                }
+            
+                else {
+                  currentTimeB.secsB -= 1
+                }
+            
+            
+                return {
+                  ...currentTimeB
+                }
+              }
+            }
 
-      // breakBtn.addEventListener('click', () => {
-      //   audio.play();
-      //   if (soundIcon.src.endsWith("sound-off.png")) {
-      //     audio.pause();
-      //   }
+            breakBtn.addEventListener('click', () => {
+              audio.play();
+              if (soundIcon.src.endsWith("sound-off.png")) {
+                audio.pause();
+              }
 
-      //   LoadingCircle(), {once: true};
-      
-      // function pomodoroB() {
-      // currentTimeB.decrementB(currentTimeB)
-      // document.querySelector("span#seconds").innerHTML = currentTimeB.secsB < 10 ? `0${currentTimeB.secsB}` : currentTimeB.secsB;
-      // document.querySelector("span#minutes").innerHTML = currentTimeB.minsB < 10 ? `0${currentTimeB.minsB}` : currentTimeB.minsB;
-      // }
-      
-      // let tickB = setInterval(() => {
-      // pomodoroB()
-      // console.log(currentTimeB)
-      // }, 1000);
-      
-      // if (currentTimeB.secsB == 0 && currentTimeB.minsB == 0) {
-      // currentTimeB.minsB = 0;
-      // currentTimeB.secsB = 0;
-      // clearInterval(tickB);
-      // }}, {once: true}), {once: true};
+              LoadingCircleB(), {once: true};
+            
+            function pomodoroB() {
+            currentTimeB.decrementB(currentTimeB)
+            document.querySelector("span#seconds").innerHTML = currentTimeB.secsB < 10 ? `0${currentTimeB.secsB}` : currentTimeB.secsB;
+            document.querySelector("span#minutes").innerHTML = currentTimeB.minsB < 10 ? `0${currentTimeB.minsB}` : currentTimeB.minsB;
+            }
+            
+            let tickB = setInterval(() => {
+            pomodoroB()
+            console.log(currentTimeB)
+            }, 1000);
+            
+            if (currentTimeB.secsB == 0 && currentTimeB.minsB == 0) {
+            currentTimeB.minsB = 0;
+            currentTimeB.secsB = 0;
+            clearInterval(tickB);
+            }}, {once: true}), {once: true};
   }
     }
 
@@ -304,6 +319,75 @@ const currentTimee = {
             frogGif.src = "./assets/dancing-frog.gif";
         } else {
       frogGif.src = "./assets/dancing-frog.gif";
+
+      ribbit.pause();
+
+      const currentTimeBB = {
+        // mins: 25
+        minsBB: 0, 
+        secsBB: 12,
+      
+        decrementBB: function (current = this) {
+      
+          if (current.secsB == 0 && current.minsB > 0) {
+            currentTimeBB.minsBB -= 1;
+            currentTimeBB.secsBB = 59;
+      
+          } else if (current.secsBB == 0 && current.minsBB == 0) {
+            current.secsBB = 0;
+            current.minsBB = 0;
+            audio.pause();
+      
+            //ribbit sounds to tell when break time starts
+            ribbit.play();
+            setTimeout(function(){
+            ribbit.pause();
+          }, 4000);
+      
+            const frogGif = document.getElementById("froggo");
+              if (frogGif.src.endsWith("coding-frog.gif")) {
+                  frogGif.src = "./assets/dancing-frog.gif";
+              } else {
+            frogGif.src = "./assets/dancing-frog.gif";
+            
+        }
+          }
+      
+          else {
+            currentTimeBB.secsBB -= 1
+          }
+      
+      
+          return {
+            ...currentTimeBB
+          }
+        }
+      }
+
+      breakBtn.addEventListener('click', () => {
+        audio.play();
+        if (soundIcon.src.endsWith("sound-off.png")) {
+          audio.pause();
+        }
+
+        LoadingCircleB(), {once: true};
+      
+      function pomodoroBB() {
+      currentTimeBB.decrementBB(currentTimeBB)
+      document.querySelector("span#seconds").innerHTML = currentTimeBB.secsBB < 10 ? `0${currentTimeBB.secsBB}` : currentTimeBB.secsBB;
+      document.querySelector("span#minutes").innerHTML = currentTimeBB.minsBB < 10 ? `0${currentTimeBB.minsBB}` : currentTimeBB.minsBB;
+      }
+      
+      let tickBB = setInterval(() => {
+      pomodoroBB()
+      console.log(currentTimeBB)
+      }, 1000);
+      
+      if (currentTimeBB.secsBB == 0 && currentTimeBB.minsBB == 0) {
+      currentTimeBB.minsBB = 0;
+      currentTimeBB.secsBB = 0;
+      clearInterval(tickBB);
+      }}, {once: true}), {once: true};
   }
     }
 
@@ -386,6 +470,75 @@ const currentTime2 = {
         } else {
       frogGif.src = "./assets/dancing-frog.gif";
   }
+
+        ribbit.pause();
+
+            const currentTimeB2 = {
+              // mins: 25
+              minsB2: 5, 
+              secsB2: 0,
+            
+              decrementB2: function (current = this) {
+            
+                if (current.secsB2 == 0 && current.minsB2 > 0) {
+                  currentTimeB2.minsB2 -= 1;
+                  currentTimeB2.secsB2 = 59;
+            
+                } else if (current.secsB2 == 0 && current.minsB2 == 0) {
+                  current.secsB2 = 0;
+                  current.minsB2 = 0;
+                  audio.pause();
+            
+                  //ribbit sounds to tell when break time starts
+                  ribbit.play();
+                  setTimeout(function(){
+                  ribbit.pause();
+                }, 4000);
+            
+                  const frogGif = document.getElementById("froggo");
+                    if (frogGif.src.endsWith("coding-frog.gif")) {
+                        frogGif.src = "./assets/dancing-frog.gif";
+                    } else {
+                  frogGif.src = "./assets/dancing-frog.gif";
+                  
+              }
+                }
+            
+                else {
+                  currentTimeB2.secsB2 -= 1
+                }
+            
+            
+                return {
+                  ...currentTimeB2
+                }
+              }
+            }
+
+            breakBtn.addEventListener('click', () => {
+              audio.play();
+              if (soundIcon.src.endsWith("sound-off.png")) {
+                audio.pause();
+              }
+
+              LoadingCircleB(), {once: true};
+            
+            function pomodoroB2() {
+            currentTimeB2.decrementB2(currentTimeB2)
+            document.querySelector("span#seconds").innerHTML = currentTimeB2.secsB2 < 10 ? `0${currentTimeB2.secsB2}` : currentTimeB2.secsB2;
+            document.querySelector("span#minutes").innerHTML = currentTimeB2.minsB2 < 10 ? `0${currentTimeB2.minsB2}` : currentTimeB2.minsB2;
+            }
+            
+            let tickB2 = setInterval(() => {
+            pomodoroB2()
+            console.log(currentTimeB2)
+            }, 1000);
+            
+            if (currentTimeB2.secsB2 == 0 && currentTimeB2.minsB2 == 0) {
+            currentTimeB2.minsB2 = 0;
+            currentTimeB2.secsB2 = 0;
+            clearInterval(tickB2);
+            }}, {once: true}), {once: true};
     }
 
     else {
@@ -467,6 +620,75 @@ const currentTime3 = {
         } else {
       frogGif.src = "./assets/dancing-frog.gif";
   }
+
+          ribbit.pause();
+
+          const currentTimeB3 = {
+            // mins: 25
+            minsB3: 10, 
+            secsB3: 0,
+          
+            decrementB: function (current = this) {
+          
+              if (current.secsB3 == 0 && current.minsB3 > 0) {
+                currentTimeB3.minsB3 -= 1;
+                currentTimeB3.secsB3 = 59;
+          
+              } else if (current.secsB3 == 0 && current.minsB3 == 0) {
+                current.secsB3 = 0;
+                current.minsB3 = 0;
+                audio.pause();
+          
+                //ribbit sounds to tell when break time starts
+                ribbit.play();
+                setTimeout(function(){
+                ribbit.pause();
+              }, 4000);
+          
+                const frogGif = document.getElementById("froggo");
+                  if (frogGif.src.endsWith("coding-frog.gif")) {
+                      frogGif.src = "./assets/dancing-frog.gif";
+                  } else {
+                frogGif.src = "./assets/dancing-frog.gif";
+                
+            }
+              }
+          
+              else {
+                currentTimeB3.secsB3 -= 1
+              }
+          
+          
+              return {
+                ...currentTimeB3
+              }
+            }
+          }
+
+          breakBtn.addEventListener('click', () => {
+            audio.play();
+            if (soundIcon.src.endsWith("sound-off.png")) {
+              audio.pause();
+            }
+
+            LoadingCircleB(), {once: true};
+          
+          function pomodoroB3() {
+          currentTimeB.decrementB3(currentTimeB3)
+          document.querySelector("span#seconds").innerHTML = currentTimeB3.secsB3 < 10 ? `0${currentTimeB3.secsB3}` : currentTimeB3.secsB3;
+          document.querySelector("span#minutes").innerHTML = currentTimeB3.minsB3 < 10 ? `0${currentTimeB3.minsB3}` : currentTimeB3.minsB3;
+          }
+          
+          let tickB3 = setInterval(() => {
+          pomodoroB3()
+          console.log(currentTimeB3)
+          }, 1000);
+          
+          if (currentTimeB3.secsB3 == 0 && currentTimeB3.minsB3 == 0) {
+          currentTimeB3.minsB3 = 0;
+          currentTimeB3.secsB3 = 0;
+          clearInterval(tickB3);
+          }}, {once: true}), {once: true};
     }
 
     else {
